@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily : {
-      'onest' : ['Onest',' sans-serif'],
+      'onest': ['onest', 'sans-serif'],
       'gt' : ['gt_walsheimbold', 'sans-serif']
     }
   },
