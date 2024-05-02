@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'onest';
+    src: url('./assets/font/onest/Onest-Regular.woff2') format('woff2'),
+        url('./assets/font/onest/Onest-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'gt_walsheimbold';
+    src: url('./assets/font/gt/gt-walsheim-bold-webfont.woff2') format('woff2'),
+         url('./assets/font/gt/gt-walsheim-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gt_walsheimmedium';
+    src: url('./assets/font/gt/gt-walsheim-medium-webfont.woff2') format('woff2'),
+         url('./assets/font/gt/gt-walsheim-medium-webfont.woff') format('woff');
+    font-weight:300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gt_walsheimthin';
+    src: url('./assets/font/gt/gt-walsheim-thin-webfont.woff2') format('woff2'),
+         url('./assets/font/gt/gt-walsheim-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

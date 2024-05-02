@@ -1,14 +1,31 @@
-import { useState } from 'react'
+import { useState,useEffect,useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const dropdownRef = useRef(null);
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    }
-  
-
+  const toggleDropdown = () => {
+    console.log(isDropdownOpen)
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+        console.log(event.target)
+        console.log(dropdownRef.current)
+        console.log(dropdownRef.current.contains(event.target) +"dropdownRefdropdownRef")
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    };
+    document.addEventListener("click", handleClickOutside); 
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
     return(
         <div className='flex justify-between py-10'>
             <h1>Header</h1>
@@ -16,7 +33,7 @@ const Header = () => {
                 <ul className='flex gap-x-8'>
                     <li><Link to ="about">About Us</Link></li>
                     <li>
-                        <div className="relative">
+                    <div className="relative" ref={dropdownRef}>
                             <button onClick={toggleDropdown} >
                                 Solutions
                             </button>
